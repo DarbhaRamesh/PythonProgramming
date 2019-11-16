@@ -149,3 +149,269 @@ print(bool(None))
 print("-" * 25)
 
 #list
+
+sample_list = ['toys',3,'Notebooks',5,'sunglasses',7]
+print("lists" , sample_list)
+print("list slicing", sample_list[0::2])
+print("list slicing", sample_list[1::2])
+sample_list[0] = "laptop"
+print("lists mutable", sample_list)
+
+#copying vs modifying list
+
+print("-" * 25)
+new_list = sample_list[:]
+new_list[0] = 'grapes'
+print("original list ", sample_list)
+print("copied list ", new_list)
+
+new_list = sample_list
+new_list[0] = "Apples"
+print("original list ", sample_list)
+print("modified list ", new_list)
+print("-" * 25)
+
+#Matrices - used in datascience, image processing
+
+# let say, Below matrix represents x
+
+matrix = [
+	[1, 0, 1],
+	[0, 1, 0],
+	[1, 0, 1]
+]
+
+print("matrix", matrix[0][0])
+print("-" * 25)
+
+#list Methods
+
+#adding
+basket = [1,2,3,4,5]
+basket.append(100)
+print("Append : ", basket)
+basket.insert(2,101)
+print("Inserting at index 2 : ", basket)
+basket.extend([102, 103])
+print("Extending a list : ", basket)
+print("-" * 25)
+
+#deleting
+basket.pop()
+print("pop : ", basket)
+basket.pop(7)
+print("pop at index 7 : ", basket)
+basket.remove(100)
+print("remove 100 : ", basket)
+basket.clear()
+print("clear : ", basket)
+print("-" * 25)
+
+#indexing
+basket = ['a', 'b', 'c', 'd', 'e', 'd', 'c']
+print(basket)
+print("Indexes : ",basket.index('d'))
+print("'d' between index 4 to 6 : ", basket.index('d',4,6))
+#index returns error if element is not found 
+
+print("In operator : ", 'c' in basket)
+print("In operator : ", 'x' in basket)
+
+print("counting an element", basket.count('d'))
+print("-" * 25)
+
+#sorting
+basket = ['a', 'b', 'c', 'x','d', 'e', 'z', 'y']
+print(basket)
+basket.sort()
+print("Inplace sort : ", basket)
+basket = ['a', 'b', 'c', 'x','d', 'e', 'z', 'y']
+print("sorting : ",sorted(basket))
+print("No change in basket : ",basket)
+
+#reverse
+basket.reverse()
+print("Inplace reversed list", basket)
+print("-" * 25)
+new_list = basket[::-1]
+print("reversed list : ", new_list)
+print("No change in basket : ",basket)
+print("-" * 25)
+
+#list to String 
+
+sample_list = ['It\'s', 'a', 'Python', 'Module']
+new_list = " ".join(sample_list)
+print(new_list)
+print("-" * 25)
+
+#Removing spaces
+new_list = "  " +new_list + "  " 
+print("Original string with space : ", new_list)
+print(len(new_list))
+new_list = new_list.rstrip()
+print("string without space at right : ",new_list)
+print(len(new_list))
+new_list = new_list.lstrip()
+print("string without space at left : ",new_list)
+print(len(new_list))
+new_list = "  " +new_list + "  "
+print("Original string with space : ",new_list)
+print(len(new_list))
+new_list = new_list.strip()
+print("string without space : ",new_list)
+print(len(new_list))
+print("-" * 25)
+
+#list unpacking
+
+a,b,c,*others,d =[1,2,3,4,5,6,7,8,9]
+print(a)
+print(b)
+print(c)
+print(others)
+print(d)
+print("-" * 25)
+
+#dictionary - its unordered key value pair
+
+#dictionary keys must be immutabele and unique (otherwise wll overwrite the previous value)
+
+dictionary = {
+	'a' : 1,
+	'b' : 2,
+	'c' : 3
+ }
+
+ #accessing Keys
+
+print(dictionary['a'])
+#print(dictionary['d']) #- will get key error since it doesnt exist
+
+print(dictionary.get('d'))
+
+print("returns value of key specified : ",dictionary.get('d',4))
+
+print("returns value of key from dictionary : ",dictionary.get('c',6))
+
+user = dict(name = 'John' , age = 32)
+
+print("creating a dictionary : ",user)
+
+user.clear()
+
+print(user)
+
+print("-" * 25)
+
+#dictionary methods
+
+print("Keys : ",dictionary.keys())
+print("Values :",dictionary.values())
+print("Items",dictionary.items())
+
+print('c' in dictionary.keys())
+print(2 in dictionary.values())
+print(('a' , 1) in dictionary.items())
+
+print("-" * 25)
+
+sample_dict  = dictionary.copy()
+print(sample_dict)
+
+print(sample_dict.pop('a'))
+print(sample_dict)
+
+print(sample_dict.popitem()) #Be careful with this as it randomly removes an item as it is unordered
+print("-" * 25)
+print(dictionary)
+print("Updates the key value if present : ",
+dictionary.update({'c' : 5}))
+print(dictionary)
+print("Adds the key value if not present :",
+dictionary.update({'e' : 10}))
+print(dictionary)
+print("-" * 25)
+
+#tuple - Immutable
+
+my_tuple = (1,2,3,5,8,3,4,6,3)
+
+print(my_tuple[0])
+print(5 in my_tuple)
+
+new_tuple = my_tuple[1:2]
+print(new_tuple)
+
+x,y,*other,z = (1,2,3,4,5,6,7,8,9)
+print(other)
+
+print("-" * 25)
+
+print(my_tuple)
+print("count of 3: ", my_tuple.count(3))
+print("index of 2 : " , my_tuple.index(2))
+print("length of tuple : ", len(my_tuple))
+
+print("-" * 25)
+
+#set - unordered collection of unique objects
+my_set = {1,2,2,3,4,5,4,5}
+print(my_set)
+my_set.add(100)
+my_set.add(2) #this doesnt get added as it is present already
+print(my_set)
+print(1 in my_set)
+print("-" * 25)
+
+
+my_list = [1,2,3,4,5,5,4,3,2]
+print(list(set(my_list)))
+print("-" * 25)
+
+
+print(my_set)
+new_set = my_set.copy()
+my_set.clear()
+print(new_set)
+print(my_set)
+
+print("-" * 25)
+
+# set methods
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8,9,10}
+
+print(set1.difference(set2))
+print(set1)
+print(set2.difference(set1))
+print(set2)
+print("-" * 25)
+
+set1.discard(5)
+print(set1)
+print("-" * 25)
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8,9,10}
+
+set1.difference_update(set2)
+print(set1)
+
+set2.difference_update(set1)
+print(set2)
+print("-" * 25)
+
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8,9,10}
+
+print(set1.intersection(set2))
+print(set1 & set2)
+print(set1.isdisjoint(set2))
+print(set1.union(set2))
+print(set1|set2)
+print("-" * 25)
+
+set1 = {4,5}
+set2 = {4,5,6,7,8,9,10}
+print(set1.issubset(set2))
+print(set2.issuperset(set1))
