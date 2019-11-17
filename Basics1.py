@@ -2,6 +2,21 @@
 ## int float bool str list tuple set dict.
 
 def basics1(execute = False):
+	'''
+	This function gives basic understanding of datatypes.
+	
+	Topics:
+	int
+	float
+	bool 
+	str
+	list
+	tuple
+	set
+	dictionary
+
+	To run this function, set execute to True
+	'''
 	if execute :
 		print("Int and float")
 		print(type(2))
